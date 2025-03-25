@@ -13,4 +13,9 @@ public class ManejoErrores {
         return new ResponseEntity<>("Error: Division por cero no permitida ",
             HttpStatus.BAD_REQUEST); 
     }
+    @ExceptionHandler(NumberFormatException.class)
+    public ResponseEntity<String> handleNumberFormatException(NumberFormatException e) {
+        return new ResponseEntity<>("Error: Formato de numero incorrecto",
+            HttpStatus.BAD_REQUEST); 
+    }
 }
