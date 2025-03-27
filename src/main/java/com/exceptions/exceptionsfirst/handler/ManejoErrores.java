@@ -18,4 +18,10 @@ public class ManejoErrores {
         return new ResponseEntity<>("Error: Formato de numero incorrecto",
             HttpStatus.BAD_REQUEST); 
     }
+    @ExceptionHandler(NullPointerException.class)
+    public ResponseEntity<String> handleNullPointerException(NullPointerException e) {
+        return new ResponseEntity<>("Error: Valor nulo",
+            HttpStatus.INTERNAL_SERVER_ERROR); 
+    }
+
 }

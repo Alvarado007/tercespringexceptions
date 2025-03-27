@@ -27,3 +27,13 @@ public class Operaciones {
     }
     
 }
+
+@RestController
+class Null_P_E{
+    @GetMapping("ValorNulo")
+    public String ValorNulo() {
+        String valor = null;
+        valor.length();
+        return "Valor nulo";
+    }
+}
